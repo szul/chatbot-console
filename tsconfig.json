@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+                "module": "commonjs", 
+                "target": "es6",
+                "sourceMap": true,
+                "declaration": false,
+                "removeComments": true,
+                "outDir": "./dist"
+            },
+    "files": [
+        "./lib/schema.ts",
+        "./lib/consoleAdapter.ts",
+        "./lib/bot.ts",
+        "./lib/app.ts"
+    ]
+}
