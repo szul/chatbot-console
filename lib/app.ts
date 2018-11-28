@@ -7,6 +7,7 @@ const conversationState = new ConversationState(new MemoryStorage());
 const bot: PeopleBot = new PeopleBot(conversationState);
 
 adapter.listen(async (context: TurnContext) => {
-    console.log(`PeopleBot is running. Type "hello" to start. Type "quit" to exit.`);
     await bot.onTurn(context);
 });
+
+console.log(`PeopleBot is running. Type "hello" to start. Type "quit" to exit.`);
