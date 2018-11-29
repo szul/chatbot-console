@@ -9,7 +9,7 @@ export class ConsoleAdapter extends BotAdapter {
         output: process.stdout,
         terminal: false
     }
-    constructor(ref?: ConversationReference) {
+    constructor() {
         super();
         this._ref = {
             channelId: "console",
@@ -26,8 +26,7 @@ export class ConsoleAdapter extends BotAdapter {
                 name: "Conversation",
                 isGroup: false
             },
-            serviceUrl: "",
-            ...ref
+            serviceUrl: ""
         } as ConversationReference;
     }
 
@@ -57,7 +56,6 @@ export class ConsoleAdapter extends BotAdapter {
 
     public sendActivities(context: TurnContext, activities: Partial<Activity>[]): Promise<ResourceResponse[]> {
         return new Promise((resolve: any): void => {
-            const responses: ResourceResponse[] = [];
             function next(i: number): void {
                 if (i < activities.length) {
                     responses.push(<ResourceResponse>{});
@@ -75,6 +73,7 @@ export class ConsoleAdapter extends BotAdapter {
                     resolve(responses);
                 }
             }
+            const responses: ResourceResponse[] = [];
             next(0);
         });
     }
