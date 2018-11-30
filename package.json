@@ -2,7 +2,7 @@
   "name": "chatbot-console",
   "version": "0.1.0",
   "description": "Example of creating a TypeScript/Node.JS chatbot that works on the command line by extending the adapter.",
-  "main": "./dist/app.js",
+  "main": "console.js",
   "directories": {
     "lib": "lib"
   },
