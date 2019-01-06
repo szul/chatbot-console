@@ -6,7 +6,7 @@ const adapter: ConsoleAdapter = new ConsoleAdapter();
 const conversationState = new ConversationState(new MemoryStorage());
 const bot: PeopleBot = new PeopleBot(conversationState);
 
-adapter.listen(async (context: TurnContext) => {
+adapter.processActivity(async (context: TurnContext) => {
     await bot.onTurn(context);
 });
 

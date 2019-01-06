@@ -9,9 +9,9 @@
                 "outDir": "./dist"
             },
     "files": [
-        "./lib/schema.ts",
-        "./lib/consoleAdapter.ts",
-        "./lib/bot.ts",
-        "./lib/app.ts"
+        "./src/schema.ts",
+        "./src/consoleAdapter.ts",
+        "./src/bot.ts",
+        "./src/app.ts"
     ]
 }

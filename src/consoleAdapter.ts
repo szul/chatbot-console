@@ -2,7 +2,7 @@ import { Activity, BotAdapter, ConversationReference, ResourceResponse, TurnCont
 import { ReadLine, ReadLineOptions, createInterface} from "readline";
 
 export class ConsoleAdapter extends BotAdapter {
-    private _next: number = 0;
+    private _nextID: number = 0;
     private readonly _ref: ConversationReference;
     private readonly _lineOptions: ReadLineOptions = {
         input: process.stdin,
@@ -30,12 +30,12 @@ export class ConsoleAdapter extends BotAdapter {
         } as ConversationReference;
     }
 
-    public listen(callback: (context: TurnContext) => Promise<void>): void {
+    public processActivity(callback: (context: TurnContext) => Promise<void>): void {
         const read: ReadLine = createInterface(this._lineOptions);
         read.on("line", (text: string) => {
             const activity: Partial<Activity> = TurnContext.applyConversationReference({
                     type: "message",
-                    id: (this._next++).toString(),
+                    id: (this._nextID++).toString(),
                     timestamp: new Date(),
                     text: text
                 },

@@ -4,7 +4,7 @@
   "description": "Example of creating a TypeScript/Node.JS chatbot that works on the command line by extending the adapter.",
   "main": "console.js",
   "directories": {
-    "lib": "lib"
+    "lib": "src"
   },
   "scripts": {
     "postinstall": "node_modules/.bin/tsc -p .",
