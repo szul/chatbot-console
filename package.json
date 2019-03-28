@@ -7,7 +7,8 @@
     "lib": "src"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/tsc -p .",
+    "start": "node ./console.js",
+    "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,7 +32,9 @@
   },
   "homepage": "https://github.com/szul/chatbot-console#readme",
   "dependencies": {
-    "botbuilder": "^4.1.6",
-    "typescript": "^3.1.6"
+    "botbuilder": "^4.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.4000"
   }
 }
